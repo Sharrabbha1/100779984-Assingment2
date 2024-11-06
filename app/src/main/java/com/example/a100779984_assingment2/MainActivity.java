@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void deleteLocation()
-    { // deleting the lcoaiuton or the changes
+    { // deleting the location or the changes
         String address = etQueryAddress.getText().toString().trim();
 
         if (address.isEmpty())
