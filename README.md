@@ -22,3 +22,11 @@ Screenshot4
 ![image](https://github.com/user-attachments/assets/390f27fb-14e1-44af-955f-5dbc0624a0ce)
 
 delete page where it will give an option whether to delete or not
+
+
+Screenshot5
+
+![image](https://github.com/user-attachments/assets/b1ab711d-a3c7-4c5c-ae50-35f8ec772178)
+
+database information
+
