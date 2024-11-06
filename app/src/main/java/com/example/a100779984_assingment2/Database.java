@@ -33,7 +33,7 @@ public class Database extends SQLiteOpenHelper {
         populateSampleLocations(db);
     }
 
-    private void populateSampleLocations(SQLiteDatabase db)
+    private void populateSampleLocations(SQLiteDatabase db)   //added locaitons like 100
     {
         String[][] gtaLocations = {
             {"Downtown Toronto 1", "43.651070", "-79.347015"},
@@ -150,6 +150,7 @@ public class Database extends SQLiteOpenHelper {
     }
 
     public boolean addLocation(String address, double latitude, double longitude) {
+        // alows to add locaiton
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_ADDRESS, address);
@@ -162,12 +163,14 @@ public class Database extends SQLiteOpenHelper {
     }
 
     public Cursor getLocationByAddress(String address) {
+        // get lcoaiuton by address
         SQLiteDatabase db = this.getReadableDatabase();
         return db.query(TABLE_LOCATIONS, new String[]{COLUMN_LATITUDE, COLUMN_LONGITUDE},
                 COLUMN_ADDRESS + "=?", new String[]{address}, null, null, null);
     }
 
     public boolean updateLocation(String address, double latitude, double longitude) {
+        // allows to ypdate hte lcoautons
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_LATITUDE, latitude);
@@ -179,6 +182,7 @@ public class Database extends SQLiteOpenHelper {
     }
 
     public boolean deleteLocation(String address) {
+        // delete thge locastion
         SQLiteDatabase db = this.getWritableDatabase();
         int rowsDeleted = db.delete(TABLE_LOCATIONS, COLUMN_ADDRESS + "=?", new String[]{address});
         db.close();

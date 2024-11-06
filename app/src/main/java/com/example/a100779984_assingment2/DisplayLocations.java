@@ -18,7 +18,7 @@ public class DisplayLocations extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_locations_details);
 
-        tvLocationsList = findViewById(R.id.tv_locations_list);
+        tvLocationsList = findViewById(R.id.tv_locations_list);  //list of database
         databaseHelper = new Database(this);
 
         displayAllLocations();
@@ -40,7 +40,7 @@ public class DisplayLocations extends AppCompatActivity
             tvLocationsList.setText(locations.toString());
             cursor.close();
         } else {
-            tvLocationsList.setText("No locations found.");
+            tvLocationsList.setText("No locations found."); // will give an optin that no locatuon found
         }
     }
 }

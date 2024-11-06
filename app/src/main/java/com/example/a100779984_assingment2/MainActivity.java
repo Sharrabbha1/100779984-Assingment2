@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity
     private static final String MESSAGE_INVALID_COORDINATES = "Invalid latitude or longitude";
     private static final String MESSAGE_LOCATION_ADDED = "Location added successfully";
     private static final String MESSAGE_LOCATION_NOT_FOUND = "Location not found";
+    //added like shortcuts like when i enter the one of the message fills in the for loop it will allow to make sure the messagw associated will be printed asd form of toast
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -38,11 +39,13 @@ public class MainActivity extends AppCompatActivity
         etLongitude = findViewById(R.id.et_longitude);
         tvQueryResult = findViewById(R.id.tv_query_result);
 
+        //buttons for the xml page
         Button btnQueryLocation = findViewById(R.id.btn_query_location);
         Button btnAddLocation = findViewById(R.id.btn_add_location);
         Button btnUpdateLocation = findViewById(R.id.btn_update_location);
         Button btnDeleteLocation = findViewById(R.id.btn_delete_location);
 
+        //on click allowing for that button to work
         btnQueryLocation.setOnClickListener(view -> queryLocationByAddress());
         btnAddLocation.setOnClickListener(view -> addLocation());
         btnUpdateLocation.setOnClickListener(view -> updateLocation());
@@ -69,7 +72,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
     private void addLocation()
-    {
+    { // adding the location
         String address = etAddress.getText().toString().trim();
         String latitude = etLatitude.getText().toString().trim();
         String longitude = etLongitude.getText().toString().trim();
@@ -98,7 +101,8 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    private void updateLocation() {
+    private void updateLocation()
+    { // updating the lcoations there are added or were addedd
         String address = etAddress.getText().toString().trim();
         String latitude = etLatitude.getText().toString().trim();
         String longitude = etLongitude.getText().toString().trim();
@@ -126,7 +130,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void deleteLocation()
-    {
+    { // deleting the lcoaiuton or the changes
         String address = etQueryAddress.getText().toString().trim();
 
         if (address.isEmpty())
